@@ -7,6 +7,7 @@ function ProductDetail(props) {
     stars.push(<span className="glyphicon glyphicon-star" />);
   }
 
+
   return (
     <div className="col-sm-4 col-lg-4 col-md-4">
       <div className="thumbnail">
@@ -18,7 +19,7 @@ function ProductDetail(props) {
           </p>
         </div>
         <div className="ratings">
-          <p className="pull-right">15 reviews</p>
+          <p className="pull-right" onClick={hideShow}>15 reviews</p>
           <p>
             {stars}
           </p>
