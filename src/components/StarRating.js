@@ -7,7 +7,7 @@ export default class StarRating extends React.Component {
         super(props);
 
         this.state = {
-            rating: this.props.rating
+            rating: this.props.stars
         };
     }
 
@@ -24,7 +24,7 @@ export default class StarRating extends React.Component {
                     name="rate1"
                     starCount={5}
                     value={rating}
-                    
+
                 />
             </div>
         );

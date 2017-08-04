@@ -11,16 +11,18 @@ export default class Review extends React.Component {
   onClick(e) {
     let rev = document.getElementById('reviews');
 
-    this.state.visible ? rev.style.display = 'none' : rev.style.display = 'inline';
+    this.state.visible ? rev.style.display = 'none' : rev.style.display = 'block';
     this.setState({ visible: !this.state.visible})
      }
 
   render() {
-    
-    let revNum = this.props.reviews.length > 1 ? 'reviews' : 'review';
-    let display = {
-      display: 'none'
+    let disp = this.state.visible;
+    disp ? disp = "block" : disp = "none";
+     let display ={
+      display: disp
     }
+    let revNum = this.props.reviews.length > 1 ? 'reviews' : 'review';
+
       let reviews = this.props.reviews.map((x,i) => {
           return (
             <div key={i}>
