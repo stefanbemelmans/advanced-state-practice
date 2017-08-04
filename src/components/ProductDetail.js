@@ -8,12 +8,7 @@ function ProductDetail(props) {
   for (let i = 0; i < rating; i++) {
     stars.push(<span className="glyphicon glyphicon-star" />);
   }
-  let visible = true;
-  function hideShow() {
-    let reviews = document.getElementById('reviews');
-    visible ? (reviews.style.display = "none") :  reviews.style.display = "block";
-    visible ? visible = false : visible = true;
-  }
+
 
   return (
     <div className="col-sm-4 col-lg-4 col-md-4">
@@ -26,13 +21,7 @@ function ProductDetail(props) {
           </p>
         </div>
         <div className="ratings">
-          <p className="pull-right" onClick={hideShow}>{props.product.reviews.length} reviews</p>
-          <p>
-            <StarRating stars={rating} />
-          </p>
-          <div id="reviews">
-            <Review keys={props.product.id} review={props.product.reviews} />
-          </div>
+        <Review reviews={props.product.reviews} rating={rating} />
         </div>
       </div>
     </div>
